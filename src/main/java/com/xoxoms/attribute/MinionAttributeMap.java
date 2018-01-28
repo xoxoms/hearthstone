@@ -1,5 +1,7 @@
 package com.xoxoms.attribute;
 
+import com.xoxoms.type.Minion;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,12 @@ public class MinionAttributeMap {
     private Long attributeId;
     @Column(name = "TEMP")
     private String temp;
+    @ManyToOne
+    @JoinColumn(name = "MINION_ID", referencedColumnName = "ID", insertable = false, updatable = false)
+    private Minion minion;
+    @ManyToOne
+    @JoinColumn(name = "ATTRIBUTE_ID", referencedColumnName = "ID", insertable = false, updatable = false)
+    private Attribute attribute;
 
     public Long getId() {
         return id;
@@ -42,5 +50,17 @@ public class MinionAttributeMap {
     }
     public void setTemp(String temp) {
         this.temp = temp;
+    }
+    public Minion getMinion() {
+        return minion;
+    }
+    public void setMinion(Minion minion) {
+        this.minion = minion;
+    }
+    public Attribute getAttribute() {
+        return attribute;
+    }
+    public void setAttribute(Attribute attribute) {
+        this.attribute = attribute;
     }
 }
