@@ -1,13 +1,13 @@
-package com.xoxoms.subtype;
+package com.xoxoms.core.domain;
 
 import javax.persistence.*;
 
 /**
- * Created by ms on 2018. 1. 24..
+ * Created by ms on 2018. 1. 28..
  */
 @Entity
-@Table(name = "SUBTYPE_M")
-public class SubType {
+@Table(name = "CLASS_M")
+public class Class {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
