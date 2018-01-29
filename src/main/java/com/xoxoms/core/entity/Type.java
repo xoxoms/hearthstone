@@ -1,8 +1,4 @@
-package com.xoxoms.type;
-
-import com.xoxoms.attribute.Attribute;
-import com.xoxoms.card.Card;
-import com.xoxoms.subtype.SubType;
+package com.xoxoms.core.entity;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
 package com.xoxoms.type;
 
+import com.xoxoms.core.entity.Minion;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 package com.xoxoms.type;
 
 import com.google.common.collect.Lists;
-import com.xoxoms.attribute.MinionAttributeMap;
+import com.xoxoms.core.entity.MinionAttributeMap;
 import com.xoxoms.card.CardData;
 import com.xoxoms.support.util.JsonUtils;
 import org.junit.Before;

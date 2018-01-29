@@ -1,8 +1,4 @@
-package com.xoxoms.type;
-
-import com.xoxoms.attribute.Attribute;
-import com.xoxoms.attribute.MinionAttributeMap;
-import com.xoxoms.subtype.SubType;
+package com.xoxoms.core.entity;
 
 import javax.persistence.*;
 import java.util.List;

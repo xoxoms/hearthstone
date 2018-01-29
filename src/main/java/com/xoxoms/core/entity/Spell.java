@@ -1,4 +1,4 @@
-package com.xoxoms.type;
+package com.xoxoms.core.entity;
 
 /**
  * Created by ms on 2018. 1. 24..

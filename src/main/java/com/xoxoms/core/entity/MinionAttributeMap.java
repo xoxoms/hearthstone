@@ -1,6 +1,4 @@
-package com.xoxoms.attribute;
-
-import com.xoxoms.type.Minion;
+package com.xoxoms.core.entity;
 
 import javax.persistence.*;
 

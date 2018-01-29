@@ -1,4 +1,4 @@
-package com.xoxoms.attribute;
+package com.xoxoms.core.entity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +17,7 @@ public class Attribute {
     private String code;
     @Column(name = "NAME")
     private String name;
-    @OneToMany(mappedBy = "attribute")
+    @OneToMany(mappedBy = "action")
     private List<MinionAttributeMap> minionAttributeMaps;
 
     public Long getId() {
