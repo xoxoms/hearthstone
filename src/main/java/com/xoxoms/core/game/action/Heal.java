@@ -5,7 +5,6 @@ package com.xoxoms.core.game.action;
  */
 public class Heal implements Action {
 
-
     @Override
     public void execute() {
 
