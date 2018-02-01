@@ -1,6 +1,10 @@
 package com.xoxoms.core.game.card.minion;
 
+import com.google.common.collect.Lists;
+import com.xoxoms.core.game.buff.Buff;
 import com.xoxoms.core.game.card.Card;
+
+import java.util.List;
 
 /**
  * Created by ms on 2018. 1. 29..
@@ -17,8 +21,17 @@ public class Minion implements Card {
     private String rarity;
     private String description;
     private boolean canAttack = false;
+    private List<Buff> buffs;
 
     public void playACard() {
+
+    }
+
+    public void beforeTurn() {
+
+    }
+
+    public void afterTurn() {
 
     }
 
@@ -38,6 +51,7 @@ public class Minion implements Card {
         newOne.setBaseAttackPoint (minion.getAttackPoint());
         newOne.setRarity (minion.getRarity());
         newOne.setDescription (minion.getTextMarkDown());
+        newOne.setBuffs(Lists.newArrayList());
 
         return newOne;
     }
@@ -110,5 +124,11 @@ public class Minion implements Card {
     }
     public void setCanAttack(boolean canAttack) {
         this.canAttack = canAttack;
+    }
+    public List<Buff> getBuffs() {
+        return buffs;
+    }
+    public void setBuffs(List<Buff> buffs) {
+        this.buffs = buffs;
     }
 }
