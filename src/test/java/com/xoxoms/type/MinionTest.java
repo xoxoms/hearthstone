@@ -17,7 +17,7 @@ public class MinionTest {
     private EntityManagerFactory emf;
 
     @Before
-    public void setUp() {
+    public void setup() {
         emf = Persistence.createEntityManagerFactory("jpa");
     }
 
@@ -26,6 +26,8 @@ public class MinionTest {
         EntityManager em = emf.createEntityManager();
 
         Minion minion = em.find(Minion.class, 203L);
+        com.xoxoms.core.game.card.minion.Minion parsed = com.xoxoms.core.game.card.minion.Minion.build(minion);
+
         assertTrue(minion.getName().equals("티리온 폴드링"));
         System.out.println(minion.getMinionAttributeMaps());
     }

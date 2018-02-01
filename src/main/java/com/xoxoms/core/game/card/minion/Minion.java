@@ -8,8 +8,11 @@ import com.xoxoms.core.game.card.Card;
 public class Minion implements Card {
     private Long id;
     private String name;
+    private Integer baseCost;
     private Integer cost;
+    private Integer baseHealthPoint;
     private Integer healthPoint;
+    private Integer baseAttackPoint;
     private Integer attackPoint;
     private String rarity;
     private String description;
@@ -23,17 +26,31 @@ public class Minion implements Card {
         this.healthPoint = 0;
     }
 
-    public Minion build(com.xoxoms.core.entity.Minion minion) {
+    public static Minion build(com.xoxoms.core.entity.Minion minion) {
         Minion newOne = new Minion();
         newOne.setId(minion.getId());
-        newOne.setName (minion.getName());
-        newOne.setCost (minion.getCost());
+        newOne.setName(minion.getName());
+        newOne.setBaseCost(minion.getCost());
+        newOne.setCost(minion.getCost());
+        newOne.setBaseHealthPoint (minion.getHealthPoint());
         newOne.setHealthPoint (minion.getHealthPoint());
         newOne.setAttackPoint (minion.getAttackPoint());
+        newOne.setBaseAttackPoint (minion.getAttackPoint());
         newOne.setRarity (minion.getRarity());
         newOne.setDescription (minion.getTextMarkDown());
 
         return newOne;
+    }
+
+    public void updateHealthPoint(int value) {
+        this.healthPoint += value;
+
+        if(this.healthPoint > this.baseHealthPoint) {
+            this.healthPoint = baseHealthPoint;
+        }
+    }
+    public void updateAttackPoint(int value) {
+        this.attackPoint += value;
     }
 
     public Long getId() {
@@ -51,8 +68,16 @@ public class Minion implements Card {
     public Integer getCost() {
         return cost;
     }
+    public Integer getBaseCost() { return baseCost; }
+    public void setBaseCost(Integer baseCost) { this.baseCost = baseCost; }
     public void setCost(Integer cost) {
         this.cost = cost;
+    }
+    public Integer getBaseHealthPoint() {
+        return baseHealthPoint;
+    }
+    public void setBaseHealthPoint(Integer baseHealthPoint) {
+        this.baseHealthPoint = baseHealthPoint;
     }
     public Integer getHealthPoint() {
         return healthPoint;
@@ -60,6 +85,8 @@ public class Minion implements Card {
     public void setHealthPoint(Integer healthPoint) {
         this.healthPoint = healthPoint;
     }
+    public Integer getBaseAttackPoint() { return baseAttackPoint; }
+    public void setBaseAttackPoint(Integer baseAttackPoint) { this.baseAttackPoint = baseAttackPoint; }
     public Integer getAttackPoint() {
         return attackPoint;
     }

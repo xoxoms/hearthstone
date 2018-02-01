@@ -17,7 +17,7 @@ public class Attribute {
     private String code;
     @Column(name = "NAME")
     private String name;
-    @OneToMany(mappedBy = "action")
+    @OneToMany(mappedBy = "attribute")
     private List<MinionAttributeMap> minionAttributeMaps;
 
     public Long getId() {
@@ -44,5 +44,4 @@ public class Attribute {
     public void setMinionAttributeMaps(List<MinionAttributeMap> minionAttributeMaps) {
         this.minionAttributeMaps = minionAttributeMaps;
     }
-
 }
