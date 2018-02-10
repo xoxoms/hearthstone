@@ -1,6 +1,7 @@
 package com.xoxoms.type;
 
 import com.xoxoms.core.entity.Minion;
+import com.xoxoms.core.entity.UserCardMap;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,5 +31,14 @@ public class MinionTest {
 
         assertTrue(minion.getName().equals("티리온 폴드링"));
         System.out.println(minion.getMinionAttributeMaps());
+    }
+
+    @Test
+    public void test_getCards() {
+        EntityManager em = emf.createEntityManager();
+        UserCardMap userCardMap = em.find(UserCardMap.class, 1L);
+
+        System.out.println(userCardMap.getUser().getNickname());
+        System.out.println(userCardMap.getCard());
     }
 }

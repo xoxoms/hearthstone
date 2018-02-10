@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by ms on 2018. 1. 27..
  */
-public interface Type extends Card {
+public interface Type {
     String getName();
     void setName(String name);
     Integer getCost();
