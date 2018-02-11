@@ -13,6 +13,9 @@ public class Minion implements Type {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
+    @JoinColumn(name = "CARD_ID")
+    private Card card;
     @Column(name = "NAME")
     private String name;
     @Column(name = "COST")
@@ -159,5 +162,11 @@ public class Minion implements Type {
     @Override
     public void setAttributes(List<Attribute> attributes) {
         this.attributes = attributes;
+    }
+    public Card getCard() {
+        return card;
+    }
+    public void setCard(Card card) {
+        this.card = card;
     }
 }

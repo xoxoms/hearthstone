@@ -14,8 +14,8 @@ public class Card {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "TITLE")
-    private String title;
+    @Column(name = "NAME")
+    private String name;
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
     private CardType type;
@@ -26,11 +26,11 @@ public class Card {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
     public CardType getType() {
         return type;

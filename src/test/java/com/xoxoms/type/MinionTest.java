@@ -41,4 +41,11 @@ public class MinionTest {
         System.out.println(userCardMap.getUser().getNickname());
         System.out.println(userCardMap.getCard());
     }
+
+    @Test
+    public void test_getCard() {
+        EntityManager em = emf.createEntityManager();
+        Minion minion = em.find(Minion.class, 215L);
+        System.out.println(minion.getCard().getName());
+    }
 }
