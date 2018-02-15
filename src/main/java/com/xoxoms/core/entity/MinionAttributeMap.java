@@ -16,8 +16,6 @@ public class MinionAttributeMap {
     private Long minionId;
     @Column(name = "ATTRIBUTE_ID")
     private Long attributeId;
-    @Column(name = "TEMP")
-    private String temp;
     @ManyToOne
     @JoinColumn(name = "MINION_ID", referencedColumnName = "ID", insertable = false, updatable = false)
     private Minion minion;
@@ -27,9 +25,6 @@ public class MinionAttributeMap {
 
     public Long getId() {
         return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
     public Long getMinionId() {
         return minionId;
@@ -42,12 +37,6 @@ public class MinionAttributeMap {
     }
     public void setAttributeId(Long attributeId) {
         this.attributeId = attributeId;
-    }
-    public String getTemp() {
-        return temp;
-    }
-    public void setTemp(String temp) {
-        this.temp = temp;
     }
     public Minion getMinion() {
         return minion;

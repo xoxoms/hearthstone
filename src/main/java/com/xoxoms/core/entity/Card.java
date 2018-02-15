@@ -1,6 +1,7 @@
 package com.xoxoms.core.entity;
 
 import com.xoxoms.type.CardType;
+import com.xoxoms.type.PackCode;
 
 import javax.persistence.*;
 
@@ -19,12 +20,14 @@ public class Card {
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
     private CardType type;
+    @Column(name = "PACK_CODE")
+    @Enumerated(EnumType.STRING)
+    private PackCode packCode;
+    @Column(name = "USE_YN")
+    private String useYn;
 
     public Long getId() {
         return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
     public String getName() {
         return name;
@@ -38,4 +41,8 @@ public class Card {
     public void setType(CardType type) {
         this.type = type;
     }
+    public PackCode getPackCode() { return packCode; }
+    public void setPackCode(PackCode packCode) { this.packCode = packCode; }
+    public String getUseYn() { return useYn; }
+    public void setUseYn(String useYn) { this.useYn = useYn; }
 }

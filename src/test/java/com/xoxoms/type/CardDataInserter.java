@@ -65,7 +65,6 @@ public class CardDataInserter {
             Long ATTRIBUTE_ID = 1L;
             if(item.getSecret().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -73,7 +72,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getEnraged().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -81,7 +79,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getTaunt().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -89,7 +86,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getDeathrattle().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -97,7 +93,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getBattlecry().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -105,7 +100,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getSilence().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -113,7 +107,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getCharge().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -121,7 +114,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getInspire().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -129,7 +121,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getOverload().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -137,7 +128,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getAura().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -145,7 +135,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getCombo().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -153,7 +142,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getFreeze().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -161,7 +149,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getSpellpower().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -169,7 +156,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getStealth().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -177,7 +163,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getWindfury().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -185,7 +170,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getDivineShield().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -193,7 +177,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getPoisonous().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
@@ -201,7 +184,6 @@ public class CardDataInserter {
             ATTRIBUTE_ID++;
             if(item.getForgetful().equals("true")) {
                 MinionAttributeMap newOne = new MinionAttributeMap();
-                newOne.setTemp(item.getGameId());
                 newOne.setAttributeId(ATTRIBUTE_ID);
 
                 em.persist(newOne);
