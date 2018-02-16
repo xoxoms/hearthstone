@@ -1,6 +1,7 @@
 package com.xoxoms.core.domain.pack;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import com.xoxoms.core.entity.Card;
 import com.xoxoms.type.PackCode;
@@ -18,9 +19,6 @@ public class Pack {
     public Pack(PackCode packCode) {
         this.packCode = packCode;
         cards = Lists.newArrayList();
-        for (int i = 0; i < DEFAULT_PACK_SIZE; i++) {
-            cards.add(null);
-        }
     }
 
     public static int getDefaultPackSize() {
@@ -37,5 +35,13 @@ public class Pack {
     }
     public void setCards(List<Card> cards) {
         this.cards = cards;
+    }
+    @JsonIgnore
+    public void addCard(Card card) {
+        this.cards.add(card);
+    }
+    @JsonIgnore
+    public void addCard(List<Card> cards) {
+        this.cards.addAll(cards);
     }
 }

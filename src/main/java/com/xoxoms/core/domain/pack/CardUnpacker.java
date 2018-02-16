@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -28,23 +29,19 @@ public class CardUnpacker {
     public void unpack(Pack pack) {
         int bound = getBound(pack.getPackCode());
 
-        pack.getCards().forEach(card -> {
-            card = findCardByRandomNumber(bound);
-        });
+        for (int i = 0; i < Pack.getDefaultPackSize(); i++) {
+            pack.addCard(findCardByRandomNumber(pack.getPackCode(), bound));
+        }
     }
 
     private int getBound(PackCode packCode) {
         return cardRepository.countAllByUseYnAndPackCode(Yn.Y.name(), packCode);
     }
 
-    private int getRandomNumber(int limit) {
-        return randomGenerator.nextInt(limit);
-    }
-
-    private Card findCardByRandomNumber(int bound) {
+    private List<Card> findCardByRandomNumber(PackCode packCode, int bound) {
         int number = randomGenerator.nextInt(bound);
         Pageable pageable = new PageRequest(number, 1);
 
-        return cardRepository.findTopBy(pageable);
+        return cardRepository.findByPackCode(packCode, pageable);
     }
 }
