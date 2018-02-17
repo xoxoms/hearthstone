@@ -20,6 +20,8 @@ public class UserCardMap {
     private Card card;
     @Column(name = "USER_ID")
     private Long userId;
+    @Column(name = "CARD_ID")
+    private Long cardId;
 
     public Long getId() {
         return id;
@@ -38,4 +40,6 @@ public class UserCardMap {
     }
     public Long getUserId() { return userId; }
     public void setUserId(Long userId) { this.userId = userId; }
+    public Long getCardId() { return cardId; }
+    public void setCardId(Long cardId) { this.cardId = cardId; }
 }

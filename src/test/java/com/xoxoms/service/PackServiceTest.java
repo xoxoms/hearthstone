@@ -12,21 +12,19 @@ import javax.inject.Inject;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by ms on 2018. 2. 15..
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DeckServiceTest {
-    @Inject private DeckService deckService;
+public class PackServiceTest {
+    @Inject private PackService packService;
 
     @Test
     public void test() {
-        List<UserCardMap> userCardMaps = deckService.getUserCards(1L);
+        List<UserCardMap> userCardMaps = packService.getUserCards(1L);
         System.out.println(userCardMaps.size());
-        Pack pack = deckService.unpack(PackCode.EXPERT1);
+        Pack pack = packService.unpack(PackCode.EXPERT1);
         pack.getCards().forEach(e -> {
             System.out.println(e.getName());
         });
