@@ -22,6 +22,8 @@ public class UserCardMap {
     private Long userId;
     @Column(name = "CARD_ID")
     private Long cardId;
+    @Column(name = "COUNT")
+    private Integer count;
 
     public Long getId() {
         return id;
@@ -42,4 +44,6 @@ public class UserCardMap {
     public void setUserId(Long userId) { this.userId = userId; }
     public Long getCardId() { return cardId; }
     public void setCardId(Long cardId) { this.cardId = cardId; }
+    public Integer getCount() { return count; }
+    public void setCount(Integer count) { this.count = count; }
 }

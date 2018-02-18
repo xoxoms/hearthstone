@@ -2,6 +2,7 @@ package com.xoxoms.core.entity;
 
 import com.xoxoms.type.CardType;
 import com.xoxoms.type.PackCode;
+import com.xoxoms.type.Rarity;
 
 import javax.persistence.*;
 
@@ -20,6 +21,9 @@ public class Card {
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
     private CardType type;
+    @Column(name = "RARITY")
+    @Enumerated(EnumType.STRING)
+    private Rarity rarity;
     @Column(name = "PACK_CODE")
     @Enumerated(EnumType.STRING)
     private PackCode packCode;
@@ -41,6 +45,8 @@ public class Card {
     public void setType(CardType type) {
         this.type = type;
     }
+    public Rarity getRarity() { return rarity; }
+    public void setRarity(Rarity rarity) { this.rarity = rarity; }
     public PackCode getPackCode() { return packCode; }
     public void setPackCode(PackCode packCode) { this.packCode = packCode; }
     public String getUseYn() { return useYn; }

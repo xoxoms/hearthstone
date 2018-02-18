@@ -24,9 +24,12 @@ public class PackServiceTest {
     public void test() {
         List<UserCardMap> userCardMaps = packService.getUserCards(1L);
         System.out.println(userCardMaps.size());
-        Pack pack = packService.unpack(PackCode.EXPERT1);
-        pack.getCards().forEach(e -> {
-            System.out.println(e.getName());
-        });
+
+        for(int i = 0; i < 10; i++) {
+            Pack pack = packService.unpack(PackCode.EXPERT1);
+            pack.getCards().forEach(e -> {
+                System.out.println(e.getName());
+            });
+        }
     }
 }

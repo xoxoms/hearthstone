@@ -5,5 +5,6 @@ package com.xoxoms.type;
  */
 public enum CardType {
     MINION,
-    SPELL
+    SPELL,
+    WEAPON
 }

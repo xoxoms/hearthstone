@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface UserCardMapRepository extends JpaRepository<UserCardMap, Long> {
     List<UserCardMap> findByUserId(Long userId);
+    UserCardMap findByUserIdAndCardId(Long userId, Long cardId);
 }

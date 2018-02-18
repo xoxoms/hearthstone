@@ -44,9 +44,16 @@ public class PackService {
     public void applyPack(Long userId, Pack pack) {
         List<UserCardMap> userCardMaps = Lists.newArrayList();
         pack.getCards().forEach(card -> {
-            UserCardMap userCardMap = new UserCardMap();
-            userCardMap.setUserId(userId);
-            userCardMap.setCardId(card.getId());
+            UserCardMap userCardMap = userCardMapRepository.findByUserIdAndCardId(userId, card.getId());
+            if (userCardMap == null) {
+                userCardMap = new UserCardMap();
+                userCardMap.setUserId(userId);
+                userCardMap.setCardId(card.getId());
+                userCardMap.setCount(1);
+            } else {
+                userCardMap.setCount(userCardMap.getCount() + 1);
+            }
+
             userCardMaps.add(userCardMap);
         });
 

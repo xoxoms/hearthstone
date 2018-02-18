@@ -4,6 +4,7 @@ import com.xoxoms.core.entity.Card;
 import com.xoxoms.repository.CardRepository;
 import com.xoxoms.support.util.Yn;
 import com.xoxoms.type.PackCode;
+import com.xoxoms.type.Rarity;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -33,12 +34,27 @@ public class CardUnpacker {
     }
 
     private int getBound(PackCode packCode) {
-        return cardRepository.countAllByUseYnAndPackCode(Yn.Y.name(), packCode);
+        Rarity rarity = getRarity();
+        if (rarity.equals(Rarity.LEGENDARY)) {
+            System.out.println("get LEGENDARY!!!");
+        }
+
+        return cardRepository.countAllByUseYnAndPackCodeAndRarity(Yn.Y.name(), packCode, rarity);
+    }
+    private int getRandom(int bound) {
+        Random random = new Random();
+        return random.nextInt(bound);
+    }
+    private Rarity getRarity() {
+        int random = getRandom(100);
+        if (random < 5) return Rarity.LEGENDARY;
+        else if (random < 15) return Rarity.EPIC;
+        else if (random < 50) return Rarity.RARE;
+        else return Rarity.COMMON;
     }
 
     private List<Card> findCardByRandomNumber(PackCode packCode, int bound) {
-        Random random = new Random();
-        int number = random.nextInt(bound);
+        int number = getRandom(bound);
         Pageable pageable = new PageRequest(number, 1);
 
         return cardRepository.findByPackCode(packCode, pageable);
