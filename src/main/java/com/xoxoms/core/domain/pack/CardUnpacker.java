@@ -18,12 +18,10 @@ import java.util.Random;
 @Component
 public class CardUnpacker {
     private CardRepository cardRepository;
-    private Random randomGenerator;
 
     @Inject
     public CardUnpacker(CardRepository cardRepository) {
         this.cardRepository = cardRepository;
-        this.randomGenerator = new Random();
     }
 
     public void unpack(Pack pack) {
@@ -39,7 +37,8 @@ public class CardUnpacker {
     }
 
     private List<Card> findCardByRandomNumber(PackCode packCode, int bound) {
-        int number = randomGenerator.nextInt(bound);
+        Random random = new Random();
+        int number = random.nextInt(bound);
         Pageable pageable = new PageRequest(number, 1);
 
         return cardRepository.findByPackCode(packCode, pageable);
