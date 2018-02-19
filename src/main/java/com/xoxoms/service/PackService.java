@@ -1,6 +1,5 @@
 package com.xoxoms.service;
 
-import com.google.common.collect.Lists;
 import com.xoxoms.core.domain.pack.CardUnpacker;
 import com.xoxoms.core.domain.pack.Pack;
 import com.xoxoms.core.entity.UserCardMap;
@@ -10,6 +9,7 @@ import com.xoxoms.type.PackCode;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -41,8 +41,8 @@ public class PackService {
         return pack;
     }
 
+    @Transactional
     public void applyPack(Long userId, Pack pack) {
-        List<UserCardMap> userCardMaps = Lists.newArrayList();
         pack.getCards().forEach(card -> {
             UserCardMap userCardMap = userCardMapRepository.findByUserIdAndCardId(userId, card.getId());
             if (userCardMap == null) {
@@ -54,9 +54,7 @@ public class PackService {
                 userCardMap.setCount(userCardMap.getCount() + 1);
             }
 
-            userCardMaps.add(userCardMap);
+            userCardMapRepository.save(userCardMap);
         });
-
-        userCardMapRepository.save(userCardMaps);
     }
 }
