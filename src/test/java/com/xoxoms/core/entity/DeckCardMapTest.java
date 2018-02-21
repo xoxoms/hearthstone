@@ -29,4 +29,11 @@ public class DeckCardMapTest {
         assertNotNull(user.getUserDeckMaps());
         assertThat(user.getUserDeckMaps().size(), is(2));
     }
+
+    @Test
+    public void test_미니언카드를불러올수있다() {
+        EntityManager em = emf.createEntityManager();
+        Minion minion = em.find(Minion.class, 10L);
+        assertEquals(minion.getName(), "위습");
+    }
 }

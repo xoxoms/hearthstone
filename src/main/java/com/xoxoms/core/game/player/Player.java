@@ -1,5 +1,7 @@
 package com.xoxoms.core.game.player;
 
+import com.google.common.collect.Lists;
+import com.xoxoms.core.entity.Deck;
 import com.xoxoms.core.game.card.Card;
 import com.xoxoms.core.game.card.minion.Minion;
 import com.xoxoms.core.game.system.Arena;
@@ -18,9 +20,13 @@ public class Player {
     private List<Card> died;
     private int mana;
 
-    public Player(Arena arena) {
-        this.arena = arena;
-        mana = 1;
+    public Player(Deck deck) {
+        this.mana = 1;
+        this.deck = Lists.newArrayList();
+
+        deck.getDeckCardMaps()
+                .forEach(deckCardMap -> {
+                });
     }
 
     public void playACard(Card card) {

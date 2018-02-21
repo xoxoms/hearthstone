@@ -1,7 +1,12 @@
 package com.xoxoms.core.game.player;
 
+import com.xoxoms.core.entity.User;
 import org.junit.Before;
 import org.junit.Test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import static org.junit.Assert.*;
 
@@ -10,9 +15,13 @@ import static org.junit.Assert.*;
  */
 public class PlayerTest {
     private Player player;
+    private EntityManagerFactory emf;
 
     @Before
     public void setup() {
+        emf = Persistence.createEntityManagerFactory("jpa");
+        EntityManager em = emf.createEntityManager();
+        User user = em.find(User.class, 1L);
     }
 
     @Test

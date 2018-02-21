@@ -49,7 +49,6 @@ public class Minion implements Card {
         newOne.setHealthPoint (minion.getHealthPoint());
         newOne.setAttackPoint (minion.getAttackPoint());
         newOne.setBaseAttackPoint (minion.getAttackPoint());
-        newOne.setRarity (minion.getRarity());
         newOne.setDescription (minion.getTextMarkDown());
         newOne.setBuffs(Lists.newArrayList());
 
