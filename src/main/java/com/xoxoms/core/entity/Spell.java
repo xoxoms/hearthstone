@@ -11,4 +11,5 @@ import javax.persistence.Table;
 @Table(name = "SPELL_M")
 @DiscriminatorValue("SPELL")
 public class Spell extends Card {
+
 }

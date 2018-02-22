@@ -10,6 +10,15 @@ public class Spell implements Card {
     private String name;
     private Integer cost;
 
+    public static Spell build(com.xoxoms.core.entity.Spell spell) {
+        Spell newOne = new Spell();
+        newOne.setId(spell.getId());
+        newOne.setName(spell.getName());
+        newOne.setCost(spell.getCost());
+
+        return newOne;
+    }
+
     public Long getId() {
         return id;
     }

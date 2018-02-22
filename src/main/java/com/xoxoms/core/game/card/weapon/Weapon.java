@@ -10,6 +10,15 @@ public class Weapon implements Card {
     private String name;
     private Integer cost;
 
+    public static Weapon build(com.xoxoms.core.entity.Weapon weapon) {
+        Weapon newOne = new Weapon();
+        newOne.setId(weapon.getId());
+        newOne.setName(weapon.getName());
+        newOne.setCost(weapon.getCost());
+
+        return newOne;
+    }
+
     public Long getId() {
         return id;
     }
