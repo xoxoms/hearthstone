@@ -9,6 +9,11 @@ import java.util.List;
 @Entity
 @Table(name = "DECK_M")
 public class Deck {
+    public Deck() {}
+    public Deck(String name) {
+        this.name = name;
+    }
+
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

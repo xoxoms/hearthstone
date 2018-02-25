@@ -10,5 +10,6 @@ import java.util.List;
  */
 public interface UserCardMapRepository extends JpaRepository<UserCardMap, Long> {
     List<UserCardMap> findByUserId(Long userId);
+    int countByUserIdAndCardIdIn(Long userId, List<Long> cardIds);
     UserCardMap findByUserIdAndCardId(Long userId, Long cardId);
 }

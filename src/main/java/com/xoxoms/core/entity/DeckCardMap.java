@@ -13,9 +13,9 @@ public class DeckCardMap {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "DECK_ID")
+    @Column(name = "DECK_ID", insertable = false, updatable = false)
     private Long deckId;
-    @Column(name = "CARD_ID")
+    @Column(name = "CARD_ID", insertable = false, updatable = false)
     private Long cardId;
     @ManyToOne
     private Deck deck;

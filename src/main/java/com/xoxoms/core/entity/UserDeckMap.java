@@ -12,9 +12,9 @@ public class UserDeckMap {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "USER_ID")
+    @Column(name = "USER_ID", insertable = false, updatable = false)
     private Long userId;
-    @Column(name = "DECK_ID")
+    @Column(name = "DECK_ID", insertable = false, updatable = false)
     private Long deckId;
     @ManyToOne
     private User user;

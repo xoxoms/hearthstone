@@ -14,4 +14,5 @@ import java.util.List;
 public interface CardRepository extends JpaRepository<Card, Long> {
     int countAllByUseYnAndPackCodeAndRarity(String useYn, PackCode packCode, Rarity rarity);
     List<Card> findByPackCode(PackCode packCode, Pageable pageable);
+    List<Card> findById(Long userId);
 }
